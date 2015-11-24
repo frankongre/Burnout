@@ -1,0 +1,536 @@
+Mplus VERSION 7.31
+MUTHEN & MUTHEN
+11/20/2015   9:27 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:  CFA
+
+  DATA:
+    FILE IS "C:\Users\YXD121\Desktop\BURNOUT.dat";
+
+  VARIABLE:
+    NAMES ARE ID gender burn1 burn2 burn3 burn4 burn5 burn6;
+    USEVARIABLES ARE burn1 burn2 burn3 burn4 burn5 burn6 ;
+
+  ANALYSIS:
+    TYPE IS GENERAL;
+    ESTIMATOR IS ML;
+    ITERATIONS = 1000;
+    CONVERGENCE = 0.00005;
+
+  MODEL:
+    burn by burn1* burn2 burn3 burn4 burn5 burn6 ;
+    burn@1 ;
+    burn1 WITH burn6 ;
+  OUTPUT:  SAMPSTAT MODINDICES STANDARDIZED CINTERVAL;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+InClass_CFA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         506
+
+Number of dependent variables                                    6
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   BURN1       BURN2       BURN3       BURN4       BURN5       BURN6
+
+Continuous latent variables
+   BURN
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  C:\Users\YXD121\Desktop\BURNOUT.dat
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              BURN1         BURN2         BURN3         BURN4         BURN5
+              ________      ________      ________      ________      ________
+      1         2.002         1.832         2.073         1.419         1.844
+
+
+           Means
+              BURN6
+              ________
+      1         2.136
+
+
+           Covariances
+              BURN1         BURN2         BURN3         BURN4         BURN5
+              ________      ________      ________      ________      ________
+ BURN1          1.030
+ BURN2          0.589         1.041
+ BURN3          0.622         0.791         1.091
+ BURN4          0.345         0.428         0.477         0.639
+ BURN5          0.443         0.515         0.567         0.390         0.938
+ BURN6          0.731         0.669         0.757         0.407         0.490
+
+
+           Covariances
+              BURN6
+              ________
+ BURN6          0.936
+
+
+           Correlations
+              BURN1         BURN2         BURN3         BURN4         BURN5
+              ________      ________      ________      ________      ________
+ BURN1          1.000
+ BURN2          0.569         1.000
+ BURN3          0.587         0.742         1.000
+ BURN4          0.425         0.525         0.572         1.000
+ BURN5          0.451         0.521         0.560         0.503         1.000
+ BURN6          0.745         0.678         0.749         0.527         0.523
+
+
+           Correlations
+              BURN6
+              ________
+ BURN6          1.000
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     BURN1                 2.002       0.632       1.000   40.32%       1.000      1.000      2.000
+             506.000       1.030      -0.781       4.000   11.07%       2.000      3.000
+     BURN2                 1.832       0.843       1.000   52.96%       1.000      1.000      1.000
+             506.000       1.041      -0.637       4.000    8.89%       2.000      3.000
+     BURN3                 2.073       0.478       1.000   39.33%       1.000      2.000      2.000
+             506.000       1.091      -1.048       4.000   11.86%       2.000      3.000
+     BURN4                 1.419       1.822       1.000   74.51%       1.000      1.000      1.000
+             506.000       0.639       2.229       4.000    3.36%       1.000      2.000
+     BURN5                 1.844       0.838       1.000   48.02%       1.000      1.000      2.000
+             506.000       0.938      -0.445       4.000    7.91%       2.000      3.000
+     BURN6                 2.136       0.380       1.000   31.03%       1.000      2.000      2.000
+             506.000       0.936      -0.890       4.000    9.88%       2.000      3.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       19
+
+Loglikelihood
+
+          H0 Value                       -3332.657
+          H1 Value                       -3323.405
+
+Information Criteria
+
+          Akaike (AIC)                    6703.315
+          Bayesian (BIC)                  6783.619
+          Sample-Size Adjusted BIC        6723.311
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             18.505
+          Degrees of Freedom                     8
+          P-Value                           0.0177
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.051
+          90 Percent C.I.                    0.020  0.082
+          Probability RMSEA <= .05           0.432
+
+CFI/TLI
+
+          CFI                                0.994
+          TLI                                0.989
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1755.674
+          Degrees of Freedom                    15
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.018
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ BURN     BY
+    BURN1              0.680      0.042     16.271      0.000
+    BURN2              0.840      0.038     21.951      0.000
+    BURN3              0.935      0.037     24.944      0.000
+    BURN4              0.519      0.033     15.747      0.000
+    BURN5              0.622      0.040     15.523      0.000
+    BURN6              0.801      0.036     22.144      0.000
+
+ BURN1    WITH
+    BURN6              0.186      0.025      7.459      0.000
+
+ Intercepts
+    BURN1              2.002      0.045     44.380      0.000
+    BURN2              1.832      0.045     40.391      0.000
+    BURN3              2.073      0.046     44.636      0.000
+    BURN4              1.419      0.036     39.939      0.000
+    BURN5              1.844      0.043     42.823      0.000
+    BURN6              2.136      0.043     49.673      0.000
+
+ Variances
+    BURN               1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BURN1              0.567      0.040     14.258      0.000
+    BURN2              0.335      0.027     12.286      0.000
+    BURN3              0.217      0.024      9.059      0.000
+    BURN4              0.370      0.025     14.670      0.000
+    BURN5              0.552      0.038     14.704      0.000
+    BURN6              0.294      0.024     12.140      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ BURN     BY
+    BURN1              0.670      0.028     24.252      0.000
+    BURN2              0.824      0.018     47.062      0.000
+    BURN3              0.895      0.013     66.616      0.000
+    BURN4              0.649      0.028     22.938      0.000
+    BURN5              0.642      0.029     22.361      0.000
+    BURN6              0.828      0.017     48.156      0.000
+
+ BURN1    WITH
+    BURN6              0.456      0.041     11.137      0.000
+
+ Intercepts
+    BURN1              1.973      0.076     25.856      0.000
+    BURN2              1.796      0.072     24.991      0.000
+    BURN3              1.984      0.077     25.906      0.000
+    BURN4              1.776      0.071     24.883      0.000
+    BURN5              1.904      0.075     25.536      0.000
+    BURN6              2.208      0.082     26.789      0.000
+
+ Variances
+    BURN               1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BURN1              0.551      0.037     14.881      0.000
+    BURN2              0.322      0.029     11.156      0.000
+    BURN3              0.199      0.024      8.286      0.000
+    BURN4              0.579      0.037     15.766      0.000
+    BURN5              0.588      0.037     15.951      0.000
+    BURN6              0.314      0.029     11.004      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ BURN     BY
+    BURN1              0.670      0.028     24.252      0.000
+    BURN2              0.824      0.018     47.062      0.000
+    BURN3              0.895      0.013     66.616      0.000
+    BURN4              0.649      0.028     22.938      0.000
+    BURN5              0.642      0.029     22.361      0.000
+    BURN6              0.828      0.017     48.156      0.000
+
+ BURN1    WITH
+    BURN6              0.456      0.041     11.137      0.000
+
+ Intercepts
+    BURN1              1.973      0.076     25.856      0.000
+    BURN2              1.796      0.072     24.991      0.000
+    BURN3              1.984      0.077     25.906      0.000
+    BURN4              1.776      0.071     24.883      0.000
+    BURN5              1.904      0.075     25.536      0.000
+    BURN6              2.208      0.082     26.789      0.000
+
+ Variances
+    BURN               1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BURN1              0.551      0.037     14.881      0.000
+    BURN2              0.322      0.029     11.156      0.000
+    BURN3              0.199      0.024      8.286      0.000
+    BURN4              0.579      0.037     15.766      0.000
+    BURN5              0.588      0.037     15.951      0.000
+    BURN6              0.314      0.029     11.004      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ BURN     BY
+    BURN1              0.680      0.042     16.271      0.000
+    BURN2              0.840      0.038     21.951      0.000
+    BURN3              0.935      0.037     24.944      0.000
+    BURN4              0.519      0.033     15.747      0.000
+    BURN5              0.622      0.040     15.523      0.000
+    BURN6              0.801      0.036     22.144      0.000
+
+ BURN1    WITH
+    BURN6              0.186      0.025      7.459      0.000
+
+ Intercepts
+    BURN1              2.002      0.045     44.380      0.000
+    BURN2              1.832      0.045     40.391      0.000
+    BURN3              2.073      0.046     44.636      0.000
+    BURN4              1.419      0.036     39.939      0.000
+    BURN5              1.844      0.043     42.823      0.000
+    BURN6              2.136      0.043     49.673      0.000
+
+ Variances
+    BURN               1.000      0.000    999.000    999.000
+
+ Residual Variances
+    BURN1              0.567      0.040     14.258      0.000
+    BURN2              0.335      0.027     12.286      0.000
+    BURN3              0.217      0.024      9.059      0.000
+    BURN4              0.370      0.025     14.670      0.000
+    BURN5              0.552      0.038     14.704      0.000
+    BURN6              0.294      0.024     12.140      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    BURN1              0.449      0.037     12.126      0.000
+    BURN2              0.678      0.029     23.531      0.000
+    BURN3              0.801      0.024     33.308      0.000
+    BURN4              0.421      0.037     11.469      0.000
+    BURN5              0.412      0.037     11.181      0.000
+    BURN6              0.686      0.029     24.078      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.179E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ BURN     BY
+    BURN1            0.572       0.598       0.611       0.680       0.749       0.762       0.788
+    BURN2            0.742       0.765       0.777       0.840       0.903       0.915       0.939
+    BURN3            0.838       0.861       0.873       0.935       0.997       1.008       1.031
+    BURN4            0.434       0.454       0.464       0.519       0.573       0.583       0.603
+    BURN5            0.519       0.543       0.556       0.622       0.688       0.700       0.725
+    BURN6            0.708       0.731       0.742       0.801       0.861       0.872       0.895
+
+ BURN1    WITH
+    BURN6            0.122       0.137       0.145       0.186       0.227       0.235       0.250
+
+ Intercepts
+    BURN1            1.886       1.914       1.928       2.002       2.076       2.090       2.118
+    BURN2            1.715       1.743       1.757       1.832       1.907       1.921       1.949
+    BURN3            1.953       1.982       1.997       2.073       2.150       2.164       2.193
+    BURN4            1.327       1.349       1.361       1.419       1.477       1.489       1.510
+    BURN5            1.733       1.759       1.773       1.844       1.915       1.928       1.955
+    BURN6            2.026       2.052       2.066       2.136       2.207       2.221       2.247
+
+ Variances
+    BURN             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    BURN1            0.465       0.489       0.502       0.567       0.633       0.645       0.670
+    BURN2            0.265       0.281       0.290       0.335       0.380       0.388       0.405
+    BURN3            0.156       0.170       0.178       0.217       0.257       0.264       0.279
+    BURN4            0.305       0.320       0.328       0.370       0.411       0.419       0.435
+    BURN5            0.455       0.478       0.490       0.552       0.613       0.625       0.648
+    BURN6            0.231       0.246       0.254       0.294       0.333       0.341       0.356
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ BURN     BY
+    BURN1            0.599       0.616       0.625       0.670       0.716       0.724       0.741
+    BURN2            0.779       0.789       0.795       0.824       0.852       0.858       0.869
+    BURN3            0.860       0.869       0.873       0.895       0.917       0.921       0.929
+    BURN4            0.576       0.593       0.602       0.649       0.695       0.704       0.722
+    BURN5            0.568       0.586       0.595       0.642       0.689       0.698       0.716
+    BURN6            0.784       0.795       0.800       0.828       0.857       0.862       0.873
+
+ BURN1    WITH
+    BURN6            0.350       0.376       0.388       0.456       0.523       0.536       0.561
+
+ Intercepts
+    BURN1            1.776       1.823       1.847       1.973       2.098       2.123       2.169
+    BURN2            1.611       1.655       1.677       1.796       1.914       1.936       1.981
+    BURN3            1.787       1.834       1.858       1.984       2.110       2.134       2.182
+    BURN4            1.592       1.636       1.658       1.776       1.893       1.915       1.959
+    BURN5            1.712       1.758       1.781       1.904       2.026       2.050       2.096
+    BURN6            1.996       2.047       2.073       2.208       2.344       2.370       2.421
+
+ Variances
+    BURN             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    BURN1            0.456       0.478       0.490       0.551       0.612       0.624       0.646
+    BURN2            0.247       0.265       0.274       0.322       0.369       0.378       0.396
+    BURN3            0.137       0.152       0.160       0.199       0.239       0.246       0.261
+    BURN4            0.484       0.507       0.518       0.579       0.639       0.651       0.673
+    BURN5            0.493       0.516       0.527       0.588       0.649       0.660       0.683
+    BURN6            0.240       0.258       0.267       0.314       0.361       0.370       0.387
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ BURN     BY
+    BURN1            0.599       0.616       0.625       0.670       0.716       0.724       0.741
+    BURN2            0.779       0.789       0.795       0.824       0.852       0.858       0.869
+    BURN3            0.860       0.869       0.873       0.895       0.917       0.921       0.929
+    BURN4            0.576       0.593       0.602       0.649       0.695       0.704       0.722
+    BURN5            0.568       0.586       0.595       0.642       0.689       0.698       0.716
+    BURN6            0.784       0.795       0.800       0.828       0.857       0.862       0.873
+
+ BURN1    WITH
+    BURN6            0.350       0.376       0.388       0.456       0.523       0.536       0.561
+
+ Intercepts
+    BURN1            1.776       1.823       1.847       1.973       2.098       2.123       2.169
+    BURN2            1.611       1.655       1.677       1.796       1.914       1.936       1.981
+    BURN3            1.787       1.834       1.858       1.984       2.110       2.134       2.182
+    BURN4            1.592       1.636       1.658       1.776       1.893       1.915       1.959
+    BURN5            1.712       1.758       1.781       1.904       2.026       2.050       2.096
+    BURN6            1.996       2.047       2.073       2.208       2.344       2.370       2.421
+
+ Variances
+    BURN             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    BURN1            0.456       0.478       0.490       0.551       0.612       0.624       0.646
+    BURN2            0.247       0.265       0.274       0.322       0.369       0.378       0.396
+    BURN3            0.137       0.152       0.160       0.199       0.239       0.246       0.261
+    BURN4            0.484       0.507       0.518       0.579       0.639       0.651       0.673
+    BURN5            0.493       0.516       0.527       0.588       0.649       0.660       0.683
+    BURN6            0.240       0.258       0.267       0.314       0.361       0.370       0.387
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ BURN     BY
+    BURN1            0.572       0.598       0.611       0.680       0.749       0.762       0.788
+    BURN2            0.742       0.765       0.777       0.840       0.903       0.915       0.939
+    BURN3            0.838       0.861       0.873       0.935       0.997       1.008       1.031
+    BURN4            0.434       0.454       0.464       0.519       0.573       0.583       0.603
+    BURN5            0.519       0.543       0.556       0.622       0.688       0.700       0.725
+    BURN6            0.708       0.731       0.742       0.801       0.861       0.872       0.895
+
+ BURN1    WITH
+    BURN6            0.122       0.137       0.145       0.186       0.227       0.235       0.250
+
+ Intercepts
+    BURN1            1.886       1.914       1.928       2.002       2.076       2.090       2.118
+    BURN2            1.715       1.743       1.757       1.832       1.907       1.921       1.949
+    BURN3            1.953       1.982       1.997       2.073       2.150       2.164       2.193
+    BURN4            1.327       1.349       1.361       1.419       1.477       1.489       1.510
+    BURN5            1.733       1.759       1.773       1.844       1.915       1.928       1.955
+    BURN6            2.026       2.052       2.066       2.136       2.207       2.221       2.247
+
+ Variances
+    BURN             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    BURN1            0.465       0.489       0.502       0.567       0.633       0.645       0.670
+    BURN2            0.265       0.281       0.290       0.335       0.380       0.388       0.405
+    BURN3            0.156       0.170       0.178       0.217       0.257       0.264       0.279
+    BURN4            0.305       0.320       0.328       0.370       0.411       0.419       0.435
+    BURN5            0.455       0.478       0.490       0.552       0.613       0.625       0.648
+    BURN6            0.231       0.246       0.254       0.294       0.333       0.341       0.356
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+WITH Statements
+
+BURN5    WITH BURN4               13.352     0.080      0.080        0.178
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\yxd121\desktop\inclass2\inclass_cfa_1.dgm
+
+     Beginning Time:  09:27:02
+        Ending Time:  09:27:02
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2015 Muthen & Muthen
